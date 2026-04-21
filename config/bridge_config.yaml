@@ -1,0 +1,50 @@
+# ==========================================
+# CẦU NỐI CẢM BIẾN LIDAR (2D)
+# ==========================================
+# Front Lidar Bridge 
+- ros_topic_name: "/scan_front_raw"
+  gz_topic_name: "/scan_front_raw"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+# Rear Lidar Bridge 
+- ros_topic_name: "/scan_rear_raw"
+  gz_topic_name: "/scan_rear_raw"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+# ==========================================
+# CẦU NỐI IMU & CLOCK
+# ==========================================
+# IMU Bridge
+- ros_topic_name: "/base_imu"
+  gz_topic_name: "/base_imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
+  direction: GZ_TO_ROS
+
+# Clock
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+  
+# ==========================================
+# CẦU NỐI CAMERA NÓC (ROOF CAMERA)
+# ==========================================
+# Roof Camera 2D Image (Dùng để xem ảnh màu trực tiếp trên RViz)
+- ros_topic_name: "/camera/roof/image_raw"
+  gz_topic_name: "/roof_camera/image"  
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+# Roof Camera 3D PointCloud (QUAN TRỌNG: Mây điểm để Nav2 quét cái ghế)
+- ros_topic_name: "/camera/points"
+  gz_topic_name: "/roof_camera/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
